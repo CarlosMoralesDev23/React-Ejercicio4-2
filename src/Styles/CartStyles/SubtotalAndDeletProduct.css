@@ -1,0 +1,28 @@
+
+.SubtotalAndDeletProduct {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: flex-end;
+}
+
+.SubtotalAndDeletProduct span {
+    font-weight: bold;
+    color: #343a40;
+    margin-right: 15px;
+}
+
+.SubtotalAndDeletProduct button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.SubtotalAndDeletProduct button:hover {
+    background-color: #c82333;
+}

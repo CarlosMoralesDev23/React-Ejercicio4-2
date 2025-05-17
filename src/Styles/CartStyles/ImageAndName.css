@@ -1,0 +1,22 @@
+
+.imagenYNombre {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.imagenYNombre img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+.imagenYNombre h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #343a40;
+    flex-grow: 1;
+}

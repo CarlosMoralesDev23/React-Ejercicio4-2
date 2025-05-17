@@ -1,0 +1,21 @@
+
+/* Styles/CartStyles/EmptyCart.css */
+.emptyCartContainer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.emptyCartContainer button.vaciarCarrito {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.emptyCartContainer button.vaciarCarrito:hover {
+    background-color: #23272b;
+}

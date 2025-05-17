@@ -1,0 +1,17 @@
+/* Styles/CartStyles/Total.css */
+.cartTotalEImport {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+
+.cartTotalEImport h2.cartTotal {
+    padding-top: 0;
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 0;
+}

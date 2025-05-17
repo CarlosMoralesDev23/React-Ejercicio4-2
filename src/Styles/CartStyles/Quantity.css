@@ -1,0 +1,28 @@
+
+.botonesMenosYMas {
+    display: flex;
+    align-items: center;
+}
+
+.botonesMenosYMas button {
+    background-color: #e0e0e0;
+    color: #495057;
+    border: 1px solid #adb5bd;
+    padding: 8px 12px;
+    margin: 0 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.botonesMenosYMas button:hover {
+    background-color: #d1d1d1;
+    border-color: #868e96;
+}
+
+.botonesMenosYMas span {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #343a40;
+}
