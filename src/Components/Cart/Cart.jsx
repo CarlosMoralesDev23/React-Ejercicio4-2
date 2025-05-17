@@ -24,6 +24,8 @@ const Cart = ({
                 <div key={product.id} className="cartItem">
                     <ImageAndName product={product} />
 
+                    <h3>${product.price}</h3>
+
                     <Quantity
                         product={product}
                         incrementQuantity={incrementQuantity}
@@ -42,7 +44,7 @@ const Cart = ({
             {cart.length > 0 && (
                 <Fragment>
                     <Total cart={cart} />
-                    <EmptyCart cart={cart} emptyCart={emptyCart} />
+                    <EmptyCart emptyCart={emptyCart} />
                 </Fragment>
             )}
         </div>

@@ -1,7 +1,7 @@
 
 .cartContainer {
     width: 95%;
-    max-width: 750px;
+    max-width: 950px;
     padding: 20px;
     border: 8px solid #555;
     border-radius: 12px;
@@ -19,6 +19,8 @@
     margin-bottom: 5px;
 }
 
+
+
 .cartTitle p {
     color: #6c757d;
     font-style: italic;
@@ -30,6 +32,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    h3{
+        color: black;
+    }
 }
 
 .cartItem:last-child {

@@ -21,12 +21,19 @@ function App() {
         if (existProductInCart) {
             const upDateCart = cart.map((product) =>
                 product.id === newProduct.id
-                    ? { ...product, quantity: product.quantity + 1 }
+                    ? { ...product, quantity: product.quantity + 1, subtotal : (product.quantity +1) * product.price }
                     : product
             );
             setCart(upDateCart);
         } else {
-            setCart([...cart, { ...newProduct, quantity: 1 }]);
+            setCart([
+                ...cart,
+                {
+                    ...newProduct,
+                    quantity: 1,
+                    subtotal: newProduct.price,
+                },
+            ]);
         }
     };
 
@@ -39,7 +46,7 @@ function App() {
 
         const upDateCart = cart.map((product) =>
             product.id === newProduct.id
-                ? { ...product, quantity: product.quantity + 1 }
+                ? { ...product, quantity: product.quantity + 1, subtotal : (product.quantity +1) * product.price }
                 : product
         );
         setCart(upDateCart);
@@ -55,7 +62,7 @@ function App() {
 
         const upDateCart = cart.map((product) =>
             product.id === newProduct.id
-                ? { ...product, quantity: product.quantity - 1 }
+                ? { ...product, quantity: product.quantity - 1, subtotal : (product.quantity -1) * product.price }
                 : product
         );
         setCart(upDateCart);
@@ -63,9 +70,9 @@ function App() {
 
 
     
-    const removeProduct = (newProduct) => {
+    const removeProduct = (inCartProduct) => {
         const upDateCart = cart.filter((product) =>
-            product.id !== newProduct.id
+            product.id !== inCartProduct.id
                 ? { ...product}
                 : null
         );
