@@ -1,15 +1,12 @@
 import React from "react";
 import "../../Styles/CartStyles/SubtotalAndDeletProduct.css"
 
-const SubtotalAndDeletProduct = ( { product, cart  } ) => {
+const SubtotalAndDeletProduct = ( { product, cart, removeProduct  } ) => {
     return (
         <div className="SubtotalAndDeletProduct">
-
             <span>SubTotal: xxx</span>
 
-
-            <button>Eliminar</button>
-
+            <button onClick={() => removeProduct(product)}>Eliminar</button>
         </div>
     );
 };

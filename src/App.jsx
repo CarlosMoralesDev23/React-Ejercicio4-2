@@ -3,39 +3,79 @@ import Home from "./Layouts/Home.jsx";
 import { useState } from "react";
 
 function App() {
+    const [cart, setCart] = useState([]);
 
-    const [ cart, setCart ] = useState([])
+    const addToCart = (newProduct) => {
+        // 1 - Para agregar productos al carrito, tengo que manadarle el producto a Cart.
+        // 2 - Se lo mando con un onClick que contenga la funcion addToCart con el argumento product
+        // 3 - La función evaluara con un find si ese producto ya se encontraba en el Cart.
+        // 4 - Se evalua para no duplicarlo en Cart.
+        // 5 - Con un map, hago un ternario , donde coincidan los productos (true) agrego con cantidad +1,
+        // 6 - El else del ternario devuelve e producto mapeado que no cincide id,  product
+        // 7 - SINO EXISTE en el cart agregar el newProduct
 
+        const existProductInCart = cart.find(
+            (product) => product.id === newProduct.id
+        );
 
-    const addToCart = (product) => {
+        if (existProductInCart) {
+            const upDateCart = cart.map((product) =>
+                product.id === newProduct.id
+                    ? { ...product, quantity: product.quantity + 1 }
+                    : product
+            );
+            setCart(upDateCart);
+        } else {
+            setCart([...cart, { ...newProduct, quantity: 1 }]);
+        }
+    };
 
-        setCart([...cart, { ...product, quantity: 1 }]);
+    const incrementQuantity = (newProduct) => {
+        // 1 - Para aumentar la cantidad del producto, tengo que manadarle el producto a Cart.
+        // 2 - Se lo mando con un onClick que contenga la funcion incrementQuantity con el argumento product
+        // 5 - Con un map, hago un ternario , donde coincidan los productos (true) agrego con cantidad +1,
+        // 6 - El else del ternario devuelve e producto mapeado que no cincide id,  product
+        // 7 - SINO EXISTE en el cart agregar el newProduct
+
+        const upDateCart = cart.map((product) =>
+            product.id === newProduct.id
+                ? { ...product, quantity: product.quantity + 1 }
+                : product
+        );
+        setCart(upDateCart);
 
     };
-    const addToCart2 = (product) => {
 
-        const existProductInCart = cart.find((product)=> product.id === product.id)
+    const decrementQuantity = (newProduct) => {
+        // 1 - Para aumentar la cantidad del producto, tengo que manadarle el producto a Cart.
+        // 2 - Se lo mando con un onClick que contenga la funcion incrementQuantity con el argumento product
+        // 5 - Con un map, hago un ternario , donde coincidan los productos (true) agrego con cantidad +1,
+        // 6 - El else del ternario devuelve e producto mapeado que no cincide id,  product
+        // 7 - SINO EXISTE en el cart agregar el newProduct
 
-        setCart([...cart, { ...product, quantity: 1 }]);
+        const upDateCart = cart.map((product) =>
+            product.id === newProduct.id
+                ? { ...product, quantity: product.quantity - 1 }
+                : product
+        );
+        setCart(upDateCart);
     };
 
-    const incrementQuantity = ()=>{
-        console.log("Increment Quantity")
-    }
 
-    const decrementQuantity = () => {
-        console.log("Decrement Quantity");
-    };
     
-    const removeProduct = ()=>{
-        console.log("Remove Product");
-    }
+    const removeProduct = (newProduct) => {
+        const upDateCart = cart.filter((product) =>
+            product.id !== newProduct.id
+                ? { ...product}
+                : null
+        );
+        setCart(upDateCart);
+    };
+
     
-    const emptyCart = ()=>{
-        setCart([])
-    }
-
-
+    const emptyCart = () => {
+        setCart([]);
+    };
 
     return (
         <>
